@@ -14,6 +14,11 @@
 		80820C24257924D9001614C6 /* DouYuZBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80820C23257924D9001614C6 /* DouYuZBTests.swift */; };
 		80820C2F257924D9001614C6 /* DouYuZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80820C2E257924D9001614C6 /* DouYuZBUITests.swift */; };
 		80820C7025792EE1001614C6 /* Launch_Douyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 80820C6F25792EE1001614C6 /* Launch_Douyu.png */; };
+		80F8D511257DAA1B00FC89EF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F8D510257DAA1B00FC89EF /* Home.storyboard */; };
+		80F8D516257DAA5E00FC89EF /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F8D515257DAA5E00FC89EF /* Live.storyboard */; };
+		80F8D51F257DAAA600FC89EF /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F8D51D257DAAA600FC89EF /* Follow.storyboard */; };
+		80F8D524257DAACB00FC89EF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F8D523257DAACB00FC89EF /* Profile.storyboard */; };
+		80F8D52F257DADA600FC89EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F8D52E257DADA600FC89EF /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		80820C2E257924D9001614C6 /* DouYuZBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouYuZBUITests.swift; sourceTree = "<group>"; };
 		80820C30257924D9001614C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80820C6F25792EE1001614C6 /* Launch_Douyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_Douyu.png; sourceTree = "<group>"; };
+		80F8D510257DAA1B00FC89EF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		80F8D515257DAA5E00FC89EF /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
+		80F8D51E257DAAA600FC89EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYuZB/Classes/Main/Base.lproj/Follow.storyboard; sourceTree = "<group>"; };
+		80F8D523257DAACB00FC89EF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		80F8D52E257DADA600FC89EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +109,6 @@
 			children = (
 				80820C7A25792FE8001614C6 /* Classes */,
 				80820C0C257924D8001614C6 /* AppDelegate.swift */,
-				80820C12257924D8001614C6 /* Main.storyboard */,
 				80820C15257924D9001614C6 /* Assets.xcassets */,
 				80820C17257924D9001614C6 /* LaunchScreen.storyboard */,
 				80820C6F25792EE1001614C6 /* Launch_Douyu.png */,
@@ -130,8 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				80820C7E25792FE8001614C6 /* Main */,
-				80820C7F25792FE8001614C6 /* Tool */,
 				80820C7B25792FE8001614C6 /* Home */,
+				80F8D50C257DA63000FC89EF /* Tools */,
+				80F8D50B257DA59A00FC89EF /* Follow */,
 				80820C7C25792FE8001614C6 /* Profile */,
 				80820C7D25792FE8001614C6 /* Live */,
 			);
@@ -141,6 +151,8 @@
 		80820C7B25792FE8001614C6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				80F8D510257DAA1B00FC89EF /* Home.storyboard */,
+				80F8D52E257DADA600FC89EF /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -148,6 +160,7 @@
 		80820C7C25792FE8001614C6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				80F8D523257DAACB00FC89EF /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 		80820C7D25792FE8001614C6 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				80F8D515257DAA5E00FC89EF /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -162,15 +176,24 @@
 		80820C7E25792FE8001614C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				80820C12257924D8001614C6 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		80820C7F25792FE8001614C6 /* Tool */ = {
+		80F8D50B257DA59A00FC89EF /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				80F8D51D257DAAA600FC89EF /* Follow.storyboard */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		80F8D50C257DA63000FC89EF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Tool;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				80820C19257924D9001614C6 /* LaunchScreen.storyboard in Resources */,
+				80F8D511257DAA1B00FC89EF /* Home.storyboard in Resources */,
+				80F8D524257DAACB00FC89EF /* Profile.storyboard in Resources */,
+				80F8D516257DAA5E00FC89EF /* Live.storyboard in Resources */,
 				80820C16257924D9001614C6 /* Assets.xcassets in Resources */,
+				80F8D51F257DAAA600FC89EF /* Follow.storyboard in Resources */,
 				80820C14257924D8001614C6 /* Main.storyboard in Resources */,
 				80820C7025792EE1001614C6 /* Launch_Douyu.png in Resources */,
 			);
@@ -305,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80820C0D257924D8001614C6 /* AppDelegate.swift in Sources */,
+				80F8D52F257DADA600FC89EF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +382,14 @@
 				80820C18257924D9001614C6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		80F8D51D257DAAA600FC89EF /* Follow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80F8D51E257DAAA600FC89EF /* Base */,
+			);
+			name = Follow.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
