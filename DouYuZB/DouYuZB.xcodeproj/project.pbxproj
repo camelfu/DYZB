@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80187441257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80187440257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift */; };
+		80187446257E775800A5D49D /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80187445257E775800A5D49D /* PageTitleView.swift */; };
+		801DBA6D257FB55400AAF6EB /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA6C257FB55400AAF6EB /* UIColor-Extension.swift */; };
+		801DBA72257FC02F00AAF6EB /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA71257FC02F00AAF6EB /* PageContentView.swift */; };
+		801DBA77257FCC4500AAF6EB /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA76257FCC4500AAF6EB /* common.swift */; };
 		80820C0D257924D8001614C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80820C0C257924D8001614C6 /* AppDelegate.swift */; };
 		80820C14257924D8001614C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80820C12257924D8001614C6 /* Main.storyboard */; };
 		80820C16257924D9001614C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80820C15257924D9001614C6 /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80187440257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		80187445257E775800A5D49D /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		801DBA6C257FB55400AAF6EB /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		801DBA71257FC02F00AAF6EB /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		801DBA76257FCC4500AAF6EB /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		80820C09257924D8001614C6 /* DouYuZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80820C0C257924D8001614C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80820C13257924D8001614C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				80820C12257924D8001614C6 /* Main.storyboard */,
+				80187445257E775800A5D49D /* PageTitleView.swift */,
+				801DBA71257FC02F00AAF6EB /* PageContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -192,6 +204,9 @@
 		80F8D50C257DA63000FC89EF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				80187440257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift */,
+				801DBA6C257FB55400AAF6EB /* UIColor-Extension.swift */,
+				801DBA76257FCC4500AAF6EB /* common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -331,7 +346,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801DBA77257FCC4500AAF6EB /* common.swift in Sources */,
+				80187446257E775800A5D49D /* PageTitleView.swift in Sources */,
+				801DBA72257FC02F00AAF6EB /* PageContentView.swift in Sources */,
+				801DBA6D257FB55400AAF6EB /* UIColor-Extension.swift in Sources */,
 				80820C0D257924D8001614C6 /* AppDelegate.swift in Sources */,
+				80187441257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift in Sources */,
 				80F8D52F257DADA600FC89EF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
