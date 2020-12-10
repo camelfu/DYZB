@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         titleView.delegate = self
         return titleView
     }()
-    fileprivate lazy var pageContentView: PageContentView = {
+    fileprivate lazy var pageContentView: PageContentView = {[weak self] in
         let height: CGFloat = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
         let frame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: height)
         var childVCs = [UIViewController]()

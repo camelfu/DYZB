@@ -11,9 +11,10 @@ private let ContentCellId = "ContentCellId"
 
 class PageContentView: UIView {
 
-    fileprivate lazy var collectionView: UICollectionView = {
+    fileprivate var startOffsetX: CGFloat = 0;
+    fileprivate lazy var collectionView: UICollectionView = {[weak self] in
        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -23,7 +24,7 @@ class PageContentView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.scrollsToTop = false
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellId)
         return collectionView
@@ -74,6 +75,49 @@ extension PageContentView : UICollectionViewDataSource {
         cell.contentView.addSubview(childVC.view)
         
         return cell
+    }
+}
+
+//MRAK: -UICollectionViewDelegate
+extension PageContentView: UICollectionViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var progress: CGFloat = 0
+        var sourceIndex: Int = 0
+        var targetIndex: Int = 0
+        
+        let contentOffsetX: CGFloat = scrollView.contentOffset.x
+        let scrollWidth: CGFloat = scrollView.frame.width
+        
+        //判断左滑.右滑
+        if contentOffsetX > startOffsetX {
+            //左滑
+            progress = contentOffsetX / scrollWidth - floor(contentOffsetX / scrollWidth)
+            sourceIndex = Int(contentOffsetX / scrollWidth)
+            targetIndex = sourceIndex + 1
+            if targetIndex >= childVCs.count {
+                targetIndex = childVCs.count - 1
+            }
+            
+            //完全滑过去
+            if contentOffsetX - startOffsetX == scrollWidth {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+        }else{
+            //右滑
+            progress = 1 - (contentOffsetX / scrollWidth - floor(contentOffsetX / scrollWidth))
+            targetIndex = Int(contentOffsetX / scrollWidth)
+            sourceIndex = targetIndex + 1
+            if sourceIndex >= childVCs.count {
+                sourceIndex = childVCs.count - 1
+            }
+        }
+        
+        print("progress:\(progress)  sourceIndex:\(sourceIndex)  target:\(targetIndex)")
     }
 }
 
