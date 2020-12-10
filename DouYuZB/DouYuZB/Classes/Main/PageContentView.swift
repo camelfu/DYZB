@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol PageContentViewDelegate: class {
+    func setPageView(_ pageView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+}
+
 private let ContentCellId = "ContentCellId"
-
 class PageContentView: UIView {
-
-    fileprivate var startOffsetX: CGFloat = 0;
+    weak var delegate: PageContentViewDelegate?
+    fileprivate var isForbidScrollDelegate: Bool = false
+    fileprivate var startOffsetX: CGFloat = 0
     fileprivate lazy var collectionView: UICollectionView = {[weak self] in
        let layout = UICollectionViewFlowLayout()
         layout.itemSize = (self?.bounds.size)!
@@ -81,16 +85,20 @@ extension PageContentView : UICollectionViewDataSource {
 //MRAK: -UICollectionViewDelegate
 extension PageContentView: UICollectionViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidScrollDelegate = false
         startOffsetX = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isForbidScrollDelegate {
+            return
+        }
         var progress: CGFloat = 0
         var sourceIndex: Int = 0
         var targetIndex: Int = 0
         
         let contentOffsetX: CGFloat = scrollView.contentOffset.x
-        let scrollWidth: CGFloat = scrollView.frame.width
+        let scrollWidth: CGFloat = scrollView.bounds.width
         
         //判断左滑.右滑
         if contentOffsetX > startOffsetX {
@@ -117,12 +125,14 @@ extension PageContentView: UICollectionViewDelegate {
             }
         }
         
+        delegate?.setPageView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         print("progress:\(progress)  sourceIndex:\(sourceIndex)  target:\(targetIndex)")
     }
 }
 
 extension PageContentView {
     func setCurrentIndex(currentIndex: Int)  {
+        isForbidScrollDelegate = true
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
