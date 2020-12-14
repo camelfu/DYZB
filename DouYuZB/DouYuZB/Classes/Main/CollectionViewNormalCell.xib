@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewNormalCell" customModule="DouYuZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="253" height="169"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="253" height="169"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_live_cate_normal" translatesAutoresizingMaskIntoConstraints="NO" id="GkE-SV-PU2">
+                        <rect key="frame" x="0.0" y="145" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="IG4-SD-dah"/>
+                            <constraint firstAttribute="height" constant="14" id="QMp-LX-c5m"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼首页推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeD-25-7TI">
+                        <rect key="frame" x="19" y="145" width="68" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-Vi-Nrg">
+                        <rect key="frame" x="0.0" y="0.0" width="253" height="135"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主播123啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Miy-qb-zj2">
+                        <rect key="frame" x="5" y="116" width="76" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsA-xN-W96">
+                        <rect key="frame" x="160" y="115" width="88" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="在线人数1000" image="Image_online">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="zeD-25-7TI" firstAttribute="centerY" secondItem="GkE-SV-PU2" secondAttribute="centerY" id="BUJ-Iu-9NU"/>
+                <constraint firstItem="lqF-Vi-Nrg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HZa-6o-W9C"/>
+                <constraint firstItem="Miy-qb-zj2" firstAttribute="bottom" secondItem="lqF-Vi-Nrg" secondAttribute="bottom" constant="-5" id="LUS-Z3-hZM"/>
+                <constraint firstAttribute="bottom" secondItem="GkE-SV-PU2" secondAttribute="bottom" constant="10" id="NCg-PG-qBZ"/>
+                <constraint firstItem="jsA-xN-W96" firstAttribute="centerY" secondItem="Miy-qb-zj2" secondAttribute="centerY" id="S1g-r2-TIe"/>
+                <constraint firstAttribute="trailing" secondItem="jsA-xN-W96" secondAttribute="trailing" constant="5" id="SUL-AW-yOw"/>
+                <constraint firstAttribute="trailing" secondItem="lqF-Vi-Nrg" secondAttribute="trailing" id="Utj-LE-bVJ"/>
+                <constraint firstItem="GkE-SV-PU2" firstAttribute="top" secondItem="lqF-Vi-Nrg" secondAttribute="bottom" constant="10" id="Y4T-DC-yjO"/>
+                <constraint firstItem="GkE-SV-PU2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="doc-XE-Ehu"/>
+                <constraint firstItem="Miy-qb-zj2" firstAttribute="leading" secondItem="lqF-Vi-Nrg" secondAttribute="leading" constant="5" id="r7o-gr-vOZ"/>
+                <constraint firstItem="zeD-25-7TI" firstAttribute="leading" secondItem="GkE-SV-PU2" secondAttribute="trailing" constant="5" id="vbu-Ct-3dj"/>
+                <constraint firstItem="lqF-Vi-Nrg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ziL-9v-k6r"/>
+            </constraints>
+            <size key="customSize" width="253" height="169"/>
+            <point key="canvasLocation" x="203.62318840579712" y="94.754464285714278"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image_online" width="16" height="16"/>
+        <image name="Img_default" width="172.5" height="103.5"/>
+        <image name="home_live_cate_normal" width="14" height="14"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
