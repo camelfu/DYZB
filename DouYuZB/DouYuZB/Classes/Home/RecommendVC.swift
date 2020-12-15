@@ -10,6 +10,7 @@ import UIKit
 fileprivate let kItemMargin: CGFloat = 10
 fileprivate let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 fileprivate let kNormalItemH = kNormalItemW * 3 / 4
+fileprivate let kPrettyItemH = kNormalItemW * 4 / 3
 fileprivate let kHeadViewH: CGFloat = 50
 
 fileprivate let kNormalCellId: String = "kNormalCellId"
@@ -30,14 +31,15 @@ class RecommendVC: UIViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kPrettyCellId)
+        collectionView.register(UINib(nibName: "CollectionViewPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellId)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewId)
         
         return collectionView
     }()
-    
+    fileprivate lazy var recommendVM: RecommendViewModel = RecommendViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,8 @@ class RecommendVC: UIViewController {
         // Do any additional setup after loading the view.
         
         setupUI()
+        
+        requestData()
     }
 
 }
@@ -54,8 +58,15 @@ extension RecommendVC {
         self.view.addSubview(collectionView)
     }
 }
+
+extension RecommendVC {
+    fileprivate func requestData() {
+        recommendVM.reqeustData()
+    }
+}
+
 //MARK: - UICollectionViewDataSource
-extension RecommendVC: UICollectionViewDataSource {
+extension RecommendVC: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 12
     }
@@ -69,7 +80,7 @@ extension RecommendVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell: UICollectionViewCell
+        var cell: UICollectionViewCell!
         if indexPath.section == 1 {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellId, for: indexPath)
         }else{
@@ -83,6 +94,13 @@ extension RecommendVC: UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath)
   
         return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kNormalItemW, height: kPrettyItemH)
+        }
+        return CGSize(width: kNormalItemW, height: kNormalItemH)
     }
     
 }
