@@ -10,6 +10,7 @@ extension Date {
     static func getCurrentTimeSamp() -> String{
         let nowDate = Date()
         let interval: Int = Int(nowDate.timeIntervalSince1970)
+        print("\(interval)")
         return "\(interval)"
     }
 }

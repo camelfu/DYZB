@@ -14,15 +14,19 @@ enum MethodType {
 }
 
 class NetWorkTools {
-    class func reqeustData(_ type: MethodType, urlString: String, params: [String : Any]? = nil, callBack: @escaping (_ result: Any) -> ()) {
+    class func reqeustData(_ type: MethodType, urlString: String, params: [String : Any]? = nil, callBack: @escaping (_ responseData: [String : NSObject]) -> ()) {
         let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
         Alamofire.request(urlString, method: method, parameters: params).responseJSON { (response) in
             guard let result = response.result.value else{
                 print(response.result.error as Any)
                 return
             }
+            guard let dic = result as? [String : NSObject] else{
+                print("返回数据不是字典类型-")
+                return
+            }
             
-            callBack(result)
+            callBack(dic)
         }
     }
     
