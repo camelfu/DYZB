@@ -8,10 +8,14 @@
 import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
+    @IBOutlet weak var iconImgView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+}
+
+extension CollectionHeaderView {
+    func loadHeaderData(title: String, iconStr: String) {
+        titleLabel.text = title
+    }
 }

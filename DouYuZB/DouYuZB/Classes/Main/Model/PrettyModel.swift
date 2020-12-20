@@ -1,13 +1,13 @@
 //
-//  AnchorRoomModel.swift
+//  PrettyModel.swift
 //  DouYuZB
 //
-//  Created by Camel on 2020/12/16.
+//  Created by Camel on 2020/12/19.
 //
 
 import UIKit
 
-struct AnchorRoomModel:  Codable{
+struct PrettyModel: Codable {
     ///room_id
     var room_id: String = "0"
     /// 房间图片对应的URLString
@@ -20,13 +20,13 @@ struct AnchorRoomModel:  Codable{
     /// 主播昵称
     var nickname: String = ""
     /// 观看人数
-    var online: String = ""
+    var online: Int = 0
     /// 所在城市
-    var anchor_city: String?
+    var anchor_city: String = ""
     
     init() {
-        
     }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         room_id = try container.decode(String.self, forKey: .room_id)
@@ -34,6 +34,8 @@ struct AnchorRoomModel:  Codable{
         isVertical = try container.decode(Int.self, forKey: .isVertical)
         room_name = try container.decode(String.self, forKey: .room_name)
         nickname = try container.decode(String.self, forKey: .nickname)
-        online = try container.decode(String.self, forKey: .online)
+        online = try container.decode(Int.self, forKey: .online)
+        anchor_city = try container.decode(String.self, forKey: .anchor_city)
     }
 }
+

@@ -61,38 +61,70 @@ extension RecommendVC {
 
 extension RecommendVC {
     fileprivate func requestData() {
-        recommendVM.reqeustData()
+        recommendVM.reqeustData {
+            self.collectionView.reloadData()
+        }
     }
 }
 
 //MARK: - UICollectionViewDataSource
 extension RecommendVC: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 8
+            guard let array: [recommendModel] = recommendVM.anchorGroups[section] as? [recommendModel] else { return 0}
+            return array.count
+        }else if section == 1 {
+            guard let array: [PrettyModel] = recommendVM.anchorGroups[section] as? [PrettyModel] else {return 0}
+            return array.count
         }
         
-        return 4
+        guard let anchorGroup: AnchorGroup = recommendVM.anchorGroups[section] as? AnchorGroup else {return 0}
+        return anchorGroup.room_list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell: UICollectionViewCell!
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellId, for: indexPath)
+            let prettyCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellId, for: indexPath) as! CollectionViewPrettyCell
+            if let array: [PrettyModel] = recommendVM.anchorGroups[1] as? [PrettyModel] {
+                let prettyModel = array[indexPath.row]
+                prettyCell.loadPrettyData(prettyModel: prettyModel)
+            }
+            return prettyCell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellId, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellId, for: indexPath) as! CollectionViewNormalCell
+            if indexPath.section == 0 {
+                if let array: [recommendModel] = recommendVM.anchorGroups[0] as? [recommendModel] {
+                    let recommendModel = array[indexPath.row]
+                    cell.loadDataWithModel(recommendModel: recommendModel)
+                }
+            }else{
+                if let anchorGroup: AnchorGroup = recommendVM.anchorGroups[indexPath.section] as? AnchorGroup {
+                    let roomModel = anchorGroup.room_list[indexPath.row]
+                    cell.loadDataWithRoomModel(roomModel: roomModel)
+                }
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath)
-  
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath) as! CollectionHeaderView
+        if indexPath.section == 0 {
+            headerView.loadHeaderData(title: "推荐", iconStr: "home_header_hot")
+        }else if indexPath.section == 1 {
+            headerView.loadHeaderData(title: "颜值", iconStr: "home_header_phone")
+        }else {
+            if let anchorGroup: AnchorGroup = recommendVM.anchorGroups[indexPath.section] as? AnchorGroup {
+                print("tagName:\(anchorGroup.tag_name), icon:\(anchorGroup.icon_url)")
+                headerView.loadHeaderData(title: anchorGroup.tag_name, iconStr: anchorGroup.icon_url)
+            }
+        }
+        
         return headerView
     }
     

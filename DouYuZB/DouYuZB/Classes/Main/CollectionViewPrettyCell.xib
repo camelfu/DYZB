@@ -82,6 +82,13 @@
                 <constraint firstItem="Lgv-fO-3Hg" firstAttribute="centerY" secondItem="bHC-vg-LOO" secondAttribute="centerY" id="x67-Yl-bEk"/>
             </constraints>
             <size key="customSize" width="165" height="189"/>
+            <connections>
+                <outlet property="backImgView" destination="IOS-xH-xXa" id="rO4-uB-U6I"/>
+                <outlet property="cityLabel" destination="bHC-vg-LOO" id="19x-w4-7u4"/>
+                <outlet property="locationImgView" destination="Lgv-fO-3Hg" id="hgx-CG-x9B"/>
+                <outlet property="onlineLabel" destination="fTk-pB-mR5" id="F5y-Ru-7CK"/>
+                <outlet property="roomName" destination="Zbc-TR-jaX" id="y5Y-rN-6dc"/>
+            </connections>
             <point key="canvasLocation" x="87.681159420289859" y="62.611607142857139"/>
         </collectionViewCell>
     </objects>

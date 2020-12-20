@@ -20,7 +20,7 @@ struct AnchorGroup: Codable {
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        icon_url = try container.decode(String.self, forKey: .icon_url)
+        tag_name = try container.decode(String.self, forKey: .tag_name)
         icon_url = try container.decode(String.self, forKey: .icon_url)
         room_list = try container.decode([AnchorRoomModel].self, forKey: .room_list)
     }

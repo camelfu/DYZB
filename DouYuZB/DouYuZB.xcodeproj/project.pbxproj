@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		80187441257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80187440257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift */; };
 		80187446257E775800A5D49D /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80187445257E775800A5D49D /* PageTitleView.swift */; };
+		801A3952258DF58B00A9EE06 /* PrettyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A3951258DF58B00A9EE06 /* PrettyModel.swift */; };
 		801AF233258A4ADA003A258D /* AnchorRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801AF232258A4ADA003A258D /* AnchorRoomModel.swift */; };
 		801AF238258A517B003A258D /* JSONDecoder-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801AF237258A517B003A258D /* JSONDecoder-Extension.swift */; };
 		801DBA6D257FB55400AAF6EB /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA6C257FB55400AAF6EB /* UIColor-Extension.swift */; };
 		801DBA72257FC02F00AAF6EB /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA71257FC02F00AAF6EB /* PageContentView.swift */; };
 		801DBA77257FCC4500AAF6EB /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBA76257FCC4500AAF6EB /* common.swift */; };
+		802299B1258F45C600DB3D45 /* recommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802299B0258F45C600DB3D45 /* recommendModel.swift */; };
 		802C9AD825879BE3000ACD72 /* CollectionViewPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C9AD625879BE3000ACD72 /* CollectionViewPrettyCell.swift */; };
 		802C9AD925879BE3000ACD72 /* CollectionViewPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802C9AD725879BE3000ACD72 /* CollectionViewPrettyCell.xib */; };
 		802DE1D4258989F200192C58 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802DE1D3258989F200192C58 /* AnchorGroup.swift */; };
@@ -60,11 +62,13 @@
 /* Begin PBXFileReference section */
 		80187440257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		80187445257E775800A5D49D /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		801A3951258DF58B00A9EE06 /* PrettyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyModel.swift; sourceTree = "<group>"; };
 		801AF232258A4ADA003A258D /* AnchorRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorRoomModel.swift; sourceTree = "<group>"; };
 		801AF237258A517B003A258D /* JSONDecoder-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder-Extension.swift"; sourceTree = "<group>"; };
 		801DBA6C257FB55400AAF6EB /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		801DBA71257FC02F00AAF6EB /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		801DBA76257FCC4500AAF6EB /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		802299B0258F45C600DB3D45 /* recommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendModel.swift; sourceTree = "<group>"; };
 		802C9AD625879BE3000ACD72 /* CollectionViewPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrettyCell.swift; sourceTree = "<group>"; };
 		802C9AD725879BE3000ACD72 /* CollectionViewPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewPrettyCell.xib; sourceTree = "<group>"; };
 		802DE1D3258989F200192C58 /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			children = (
 				802DE1D3258989F200192C58 /* AnchorGroup.swift */,
 				801AF232258A4ADA003A258D /* AnchorRoomModel.swift */,
+				801A3951258DF58B00A9EE06 /* PrettyModel.swift */,
+				802299B0258F45C600DB3D45 /* recommendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +489,8 @@
 				801AF238258A517B003A258D /* JSONDecoder-Extension.swift in Sources */,
 				801DBA72257FC02F00AAF6EB /* PageContentView.swift in Sources */,
 				801AF233258A4ADA003A258D /* AnchorRoomModel.swift in Sources */,
+				801A3952258DF58B00A9EE06 /* PrettyModel.swift in Sources */,
+				802299B1258F45C600DB3D45 /* recommendModel.swift in Sources */,
 				801DBA6D257FB55400AAF6EB /* UIColor-Extension.swift in Sources */,
 				80820C0D257924D8001614C6 /* AppDelegate.swift in Sources */,
 				80187441257E5DFA00A5D49D /* UITabBarButtonItem-Extension.swift in Sources */,

@@ -71,6 +71,13 @@
                 <constraint firstItem="lqF-Vi-Nrg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ziL-9v-k6r"/>
             </constraints>
             <size key="customSize" width="253" height="169"/>
+            <connections>
+                <outlet property="backImgView" destination="lqF-Vi-Nrg" id="4FB-1i-0xz"/>
+                <outlet property="iconImgView" destination="GkE-SV-PU2" id="SLT-DD-Uwk"/>
+                <outlet property="nickName" destination="Miy-qb-zj2" id="8UR-Ch-HEi"/>
+                <outlet property="onlineBtn" destination="jsA-xN-W96" id="FPD-h3-qI1"/>
+                <outlet property="roomName" destination="zeD-25-7TI" id="a7Q-fP-53r"/>
+            </connections>
             <point key="canvasLocation" x="203.62318840579712" y="94.754464285714278"/>
         </collectionViewCell>
     </objects>
