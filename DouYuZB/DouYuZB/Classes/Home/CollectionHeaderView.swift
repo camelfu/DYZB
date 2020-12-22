@@ -17,5 +17,10 @@ class CollectionHeaderView: UICollectionReusableView {
 extension CollectionHeaderView {
     func loadHeaderData(title: String, iconStr: String) {
         titleLabel.text = title
+        if iconStr.contains("http") {
+            iconImgView.kf.setImage(with: URL.init(string: iconStr))
+        }else{
+            iconImgView.image = UIImage.init(named: iconStr)
+        }
     }
 }

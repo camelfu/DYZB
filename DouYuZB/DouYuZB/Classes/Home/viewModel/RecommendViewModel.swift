@@ -63,5 +63,9 @@ extension RecommendViewModel {
             callBack()
         }
     }
+    func requestCycleData(_ callBack:@escaping () -> ()) {
+        
+    }
+    
 }
 
