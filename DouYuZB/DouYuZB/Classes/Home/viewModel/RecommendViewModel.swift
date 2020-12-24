@@ -11,6 +11,7 @@ class RecommendViewModel {
     lazy var anchorGroups: [Any] = [Any]()
     fileprivate lazy var conmmendArray: [recommendModel] = [recommendModel]()
     fileprivate lazy var prettyArray: [PrettyModel] = [PrettyModel]()
+    lazy var cycleList: [[String : NSObject]] = [[String : NSObject]]()
 }
 
 extension RecommendViewModel {
@@ -64,7 +65,12 @@ extension RecommendViewModel {
         }
     }
     func requestCycleData(_ callBack:@escaping () -> ()) {
-        
+        //http://www.douyutv.com/api/v1/slide/6?version=2.300
+        NetWorkTools.reqeustData(.GET, urlString: "http://www.douyutv.com/api/v1/slide/6", params: ["version" : "2.300"]) { (resultData) in
+            guard let dataList = resultData["data"] as? [[String : NSObject]] else {return}
+            self.cycleList = dataList
+            callBack()
+        }
     }
     
 }

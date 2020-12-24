@@ -12,6 +12,7 @@ fileprivate let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 fileprivate let kNormalItemH = kNormalItemW * 3 / 4
 fileprivate let kPrettyItemH = kNormalItemW * 4 / 3
 fileprivate let kHeadViewH: CGFloat = 50
+fileprivate let kCycleViewH: CGFloat = kScreenW * 3 / 8
 
 fileprivate let kNormalCellId: String = "kNormalCellId"
 fileprivate let kPrettyCellId: String = "kPrettyCellId"
@@ -36,11 +37,15 @@ class RecommendVC: UIViewController {
         collectionView.register(UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellId)
         collectionView.register(UINib(nibName: "CollectionViewPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellId)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewId)
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
         
         return collectionView
     }()
     fileprivate lazy var recommendVM: RecommendViewModel = RecommendViewModel()
-    
+    fileprivate lazy var cycleView: RecommendCycleView = {
+        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH))
+        return cycleView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +61,7 @@ class RecommendVC: UIViewController {
 extension RecommendVC {
     fileprivate func setupUI() {
         self.view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
     }
 }
 
@@ -63,6 +69,9 @@ extension RecommendVC {
     fileprivate func requestData() {
         recommendVM.reqeustData {
             self.collectionView.reloadData()
+        }
+        recommendVM.requestCycleData {
+            self.cycleView.cycleData = self.recommendVM.cycleList
         }
     }
 }
