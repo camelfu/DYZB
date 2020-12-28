@@ -16,7 +16,7 @@ class RecommendCycleCell: UICollectionViewCell {
     
     fileprivate lazy var bottomView: UIView = {
        let bottomView = UIView(frame: CGRect(x: 0, y: self.bounds.size.height - 20, width: self.bounds.size.width, height: 20))
-        bottomView.backgroundColor = .darkGray
+        bottomView.backgroundColor = UIColor(r: 0, g: 0, b: 0, alpha: 0.4)
         return bottomView
     }()
     
